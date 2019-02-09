@@ -99,3 +99,13 @@ def calculate_x9(new_low_price_k, new_close_price_k):
     return new_low_price_k / new_close_price_k - 1
 
 
+# 计算 y
+# @param ：today_close_price_day ：今日收盘价
+# @param ：new_close_price_k ：最新收盘价
+# @return ：如果今日收盘价大于最新收盘价，说明涨了，返回1; 反之说明跌了，返回-1
+def calculate_y(today_close_price_day, new_close_price_k):
+    if today_close_price_day > new_close_price_k:
+        return 1
+    else:
+        return -1
+
