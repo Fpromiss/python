@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a854113b-f526-4a9e-90b1-17d9b5892c75" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/source.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/.pytest_cache/v/cache/nodeids" beforeDir="false" afterPath="$PROJECT_DIR$/test/.pytest_cache/v/cache/nodeids" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_calculate.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_calculate.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +18,8 @@
         <counts>
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -32,24 +35,24 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="15" />
-          <entry key="py" value="1457" />
+          <entry key="py" value="1984" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="1457" />
+          <entry key="Python" value="1984" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="133">
+              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
               <folding>
                 <element signature="e#0#72#0" expanded="true" />
               </folding>
@@ -57,21 +60,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/calculate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+            <state relative-caret-position="228">
+              <caret line="93" column="7" lean-forward="true" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#177#222#0" />
-                <element signature="e#403#449#0" />
-                <marker date="1548857914936" expanded="true" signature="1199:1204" ph="..." />
-                <marker date="1548857914936" expanded="true" signature="1432:1437" ph="..." />
-                <marker date="1548857914936" expanded="true" signature="1698:1703" ph="..." />
-                <marker date="1548857914936" expanded="true" signature="1919:1921" ph="..." />
-                <marker date="1548857914936" expanded="true" signature="1919:1923" ph="..." />
-                <marker date="1548857914936" expanded="true" signature="1919:1924" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="1141:1196" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="1526:1531" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="1759:1764" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="2030:2035" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="2255:2257" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="2255:2259" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="2255:2260" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="2492:2495" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="2492:2497" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="2726:2728" ph="..." />
+                <marker date="1549694219829" expanded="true" signature="2726:2730" ph="..." />
               </folding>
             </state>
           </provider>
@@ -80,14 +86,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test_calculate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="855">
+              <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
               <folding>
-                <marker date="1548857914983" expanded="true" signature="58:924" ph="..." />
-                <marker date="1548857914983" expanded="true" signature="782:924" ph="..." />
-                <marker date="1548857914983" expanded="false" signature="961:966" ph="..." />
-                <marker date="1548857914983" expanded="true" signature="1160:1165" ph="..." />
-                <marker date="1548857914983" expanded="true" signature="1296:1406" ph="..." />
+                <marker date="1549694935548" expanded="true" signature="65:1137" ph="..." />
+                <marker date="1549694935548" expanded="true" signature="645:774" ph="..." />
+                <marker date="1549694935548" expanded="true" signature="1666:1671" ph="..." />
               </folding>
             </state>
           </provider>
@@ -116,8 +120,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="37" />
-    <option name="y" value="30" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
@@ -127,7 +131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,6 +156,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -170,7 +174,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_calculate.test_calculate_x7">
+  <component name="RunManager" selected="Python tests.pytest in test_calculate.py">
     <configuration name="pytest for test_calculate.test_calculate_new_bo_dong_lv" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="SVM" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,7 +190,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_calculate.test_calculate_x6" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_calculate.test_calculate_new_volume" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="SVM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -197,11 +201,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_calculate.test_calculate_x6&quot;" />
+      <option name="_new_target" value="&quot;test_calculate.test_calculate_new_volume&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_calculate.test_calculate_x7" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_calculate.test_calculate_x9" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="SVM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -212,7 +216,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_calculate.test_calculate_x7&quot;" />
+      <option name="_new_target" value="&quot;test_calculate.test_calculate_x9&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -247,19 +251,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python tests.pytest for test_calculate.test_calculate_x9" />
       <item itemvalue="Python tests.pytest in test_calculate.py" />
+      <item itemvalue="Python tests.pytest for test_calculate.test_calculate_new_volume" />
       <item itemvalue="Python tests.pytest for test_calculate.test_calculate_yes_bo_dong_lv" />
       <item itemvalue="Python tests.pytest for test_calculate.test_calculate_new_bo_dong_lv" />
-      <item itemvalue="Python tests.pytest for test_calculate.test_calculate_x6" />
-      <item itemvalue="Python tests.pytest for test_calculate.test_calculate_x7" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_calculate.test_calculate_x7" />
-        <item itemvalue="Python tests.pytest for test_calculate.test_calculate_x6" />
+        <item itemvalue="Python tests.pytest in test_calculate.py" />
         <item itemvalue="Python tests.pytest for test_calculate.test_calculate_new_bo_dong_lv" />
         <item itemvalue="Python tests.pytest for test_calculate.test_calculate_yes_bo_dong_lv" />
-        <item itemvalue="Python tests.pytest in test_calculate.py" />
+        <item itemvalue="Python tests.pytest for test_calculate.test_calculate_new_volume" />
+        <item itemvalue="Python tests.pytest for test_calculate.test_calculate_x9" />
       </list>
     </recent_temporary>
   </component>
@@ -277,27 +281,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_calculate_test_calculate_x6 - 2019.01.30 at 22h 05m 12s.xml">
-      <configuration name="pytest for test_calculate.test_calculate_x6" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_calculate_test_calculate_new_bo_dong_lv - 2019.01.30 at 22h 09m 04s.xml">
-      <configuration name="pytest for test_calculate.test_calculate_new_bo_dong_lv" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_calculate_test_calculate_new_bo_dong_lv - 2019.01.30 at 22h 10m 07s.xml">
-      <configuration name="pytest for test_calculate.test_calculate_new_bo_dong_lv" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_calculate_test_calculate_new_bo_dong_lv - 2019.01.30 at 22h 10m 54s.xml">
-      <configuration name="pytest for test_calculate.test_calculate_new_bo_dong_lv" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_calculate_test_calculate_new_bo_dong_lv - 2019.01.30 at 22h 11m 40s.xml">
-      <configuration name="pytest for test_calculate.test_calculate_new_bo_dong_lv" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_calculate_test_calculate_new_bo_dong_lv - 2019.01.30 at 22h 12m 42s.xml">
-      <configuration name="pytest for test_calculate.test_calculate_new_bo_dong_lv" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_calculate_test_calculate_new_bo_dong_lv - 2019.01.30 at 22h 13m 03s.xml">
-      <configuration name="pytest for test_calculate.test_calculate_new_bo_dong_lv" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_for_test_calculate_test_calculate_new_bo_dong_lv - 2019.01.30 at 22h 13m 32s.xml">
       <configuration name="pytest for test_calculate.test_calculate_new_bo_dong_lv" configurationId="tests" />
     </history-entry>
@@ -307,24 +290,46 @@
     <history-entry file="pytest_for_test_calculate_test_calculate_x7 - 2019.01.30 at 22h 18m 38s.xml">
       <configuration name="pytest for test_calculate.test_calculate_x7" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_for_test_calculate_test_calculate_x8 - 2019.02.09 at 14h 21m 49s.xml">
+      <configuration name="pytest for test_calculate.test_calculate_x8" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_calculate_test_calculate_x9 - 2019.02.09 at 14h 25m 56s.xml">
+      <configuration name="pytest for test_calculate.test_calculate_x9" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_calculate_py - 2019.02.09 at 14h 39m 42s.xml">
+      <configuration name="pytest in test_calculate.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_calculate_test_calculate_new_volume - 2019.02.09 at 14h 42m 59s.xml">
+      <configuration name="pytest for test_calculate.test_calculate_new_volume" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_calculate_test_calculate_yes_bo_dong_lv - 2019.02.09 at 14h 46m 52s.xml">
+      <configuration name="pytest for test_calculate.test_calculate_yes_bo_dong_lv" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_calculate_test_calculate_new_bo_dong_lv - 2019.02.09 at 14h 47m 11s.xml">
+      <configuration name="pytest for test_calculate.test_calculate_new_bo_dong_lv" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_calculate_py - 2019.02.09 at 14h 48m 59s.xml">
+      <configuration name="pytest in test_calculate.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2147541" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.06885246" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -334,44 +339,45 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/calculate.py">
+    <entry file="file://$PROJECT_DIR$/src/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="70" column="30" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+        <state relative-caret-position="133">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#177#222#0" />
-            <element signature="e#403#449#0" />
-            <marker date="1548857914936" expanded="true" signature="1199:1204" ph="..." />
-            <marker date="1548857914936" expanded="true" signature="1432:1437" ph="..." />
-            <marker date="1548857914936" expanded="true" signature="1698:1703" ph="..." />
-            <marker date="1548857914936" expanded="true" signature="1919:1921" ph="..." />
-            <marker date="1548857914936" expanded="true" signature="1919:1923" ph="..." />
-            <marker date="1548857914936" expanded="true" signature="1919:1924" ph="..." />
+            <element signature="e#0#72#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_calculate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="855">
+          <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
           <folding>
-            <marker date="1548857914983" expanded="true" signature="58:924" ph="..." />
-            <marker date="1548857914983" expanded="true" signature="782:924" ph="..." />
-            <marker date="1548857914983" expanded="false" signature="961:966" ph="..." />
-            <marker date="1548857914983" expanded="true" signature="1160:1165" ph="..." />
-            <marker date="1548857914983" expanded="true" signature="1296:1406" ph="..." />
+            <marker date="1549694935548" expanded="true" signature="65:1137" ph="..." />
+            <marker date="1549694935548" expanded="true" signature="645:774" ph="..." />
+            <marker date="1549694935548" expanded="true" signature="1666:1671" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.py">
+    <entry file="file://$PROJECT_DIR$/src/calculate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="228">
+          <caret line="93" column="7" lean-forward="true" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
           <folding>
-            <element signature="e#0#72#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1549694219829" expanded="true" signature="1141:1196" ph="..." />
+            <marker date="1549694219829" expanded="true" signature="1526:1531" ph="..." />
+            <marker date="1549694219829" expanded="true" signature="1759:1764" ph="..." />
+            <marker date="1549694219829" expanded="true" signature="2030:2035" ph="..." />
+            <marker date="1549694219829" expanded="true" signature="2255:2257" ph="..." />
+            <marker date="1549694219829" expanded="true" signature="2255:2259" ph="..." />
+            <marker date="1549694219829" expanded="true" signature="2255:2260" ph="..." />
+            <marker date="1549694219829" expanded="true" signature="2492:2495" ph="..." />
+            <marker date="1549694219829" expanded="true" signature="2492:2497" ph="..." />
+            <marker date="1549694219829" expanded="true" signature="2726:2728" ph="..." />
+            <marker date="1549694219829" expanded="true" signature="2726:2730" ph="..." />
           </folding>
         </state>
       </provider>
