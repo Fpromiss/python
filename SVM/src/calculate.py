@@ -109,3 +109,4 @@ def calculate_y(today_close_price_day, new_close_price_k):
     else:
         return -1
 
+
