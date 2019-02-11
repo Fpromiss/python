@@ -6,7 +6,7 @@ import pandas as pd
 import os
 from pandas import DataFrame
 import matplotlib.pyplot as plt
-import src.calculate as calculate_x
+import my_calculate
 
 
 # 计算 x
@@ -38,27 +38,52 @@ def calculate_x():
         high_price_k = k_bar["high"]  # 获取k线最高价
         low_price_k = k_bar["low"]  # 获取k线最高价
         volume_k = k_bar["volume"]  # 获取k线成交量
-        print("hello" + str(open_price_k))
+        time_k = k_bar["time"]  # 获取k线时间
 
-        # # 昨日k线数据
-        # yesterday_k_bar = k_bar_data[k_bar_data["date"] == form_date].reset_index(drop=True)  # 获取昨天k线bar数据
-        # yesterday_close_price_k = yesterday_k_bar["close"]  # 获取昨日k线收盘价
-        # yesterday_open_price_day = open_price_day[now_day]  # 获取昨日开盘价
-        # yesterday_close_price_day = close_price_day[now_day]  # 获取昨日收盘价
-        # yesterday_high_price_day = high_price_day[now_day]  # 获取昨日最高价
-        # yesterday_low_price_day = low_price_day[now_day]  # 获取昨日最低价
-        # yesterday_volume = volume_day[now_day]  # 获取昨日成交量
-        #
-        # # 今日数据
-        # today_open_price_day = open_price_k[0]  # 今日开盘价
-        # today_close_price_day = close_price_k[len(close_price_k) - 1]  # 今日收盘价
-        #
-        # # 计算x1 - x9
-        # x1.append(calculate_x.calculate_x1(yesterday_open_price_day, ))
+        # 昨日k线数据
+        yesterday_k_bar = k_bar_data[k_bar_data["date"] == form_date].reset_index(drop=True)  # 获取昨天k线bar数据
+        yesterday_close_price_k = yesterday_k_bar["close"]  # 获取昨日k线收盘价
 
+        # 昨日天数据
+        yesterday_open_price_day = open_price_day[now_day]  # 获取昨日开盘价
+        yesterday_close_price_day = close_price_day[now_day]  # 获取昨日收盘价
+        yesterday_high_price_day = high_price_day[now_day]  # 获取昨日最高价
+        yesterday_low_price_day = low_price_day[now_day]  # 获取昨日最低价
+        yesterday_volume = volume_day[now_day]  # 获取昨日成交量
 
+        # 今日天数据
+        today_open_price_day = open_price_k[0]  # 今日开盘价
+        today_close_price_day = close_price_k[len(close_price_k) - 1]  # 今日收盘价
 
-
+        # 对交易时间前一条k线进行训练 此时暂定交易时间前一条k线为 trade_time = "10:25:00"
+        for i in range(len(close_price_k)):
+            print("now_time:" + time_k[i])
+            # 如果训练日当前时间 等于 交易时间上一条k线时间 带入数据进行计算
+            if time_k[i] == trade_time:
+                x1.append(my_calculate.calculate_x1(yesterday_open_price_day, close_price_k[i]))
+                x2.append(my_calculate.calculate_x2(yesterday_close_price_day, close_price_k[i]))
+                x3.append(my_calculate.calculate_x3(yesterday_high_price_day, close_price_k[i]))
+                x4.append(my_calculate.calculate_x4(yesterday_low_price_day, close_price_k[i]))
+                now_volume = 0  # 最新成交量
+                for j in range(0, i):
+                    now_volume = now_volume + volume_k[j]
+                now_volume2 = my_calculate.calculate_new_volume(now_volume, len(close_price_k), i + 1)  # 计算加权后的最新成交量
+                x5.append(my_calculate.calculate_x5(yesterday_volume, now_volume2))
+                yes_bo_dong_lv = my_calculate.calculate_yes_bo_dong_lv(yesterday_close_price_k)  # 计算昨日波动率
+                new_bo_dong_lv = my_calculate.calculate_new_bo_dong_lv(close_price_k[0:i + 1], len(close_price_k),
+                                                                       i + 1) # 计算最新波动率
+                x6.append(my_calculate.calculate_x6(yes_bo_dong_lv, new_bo_dong_lv))
+                x7.append(my_calculate.calculate_x7(today_open_price_day, close_price_k[i]))
+                new_max = max(high_price_k[0:i + 1])  # 计算最新最高价
+                x8.append(my_calculate.calculate_x8(new_max, close_price_k[i]))
+                new_min = min(low_price_k[0:i + 1])  # 计算最新最低价
+                x9.append(my_calculate.calculate_x9(new_min, close_price_k[i]))
+                length = len(x1) - 1
+                feature = [x1[length], x2[length], x3[length], x4[length], x5[length], x6[length], x7[length],
+                           x8[length], x9[length]]
+                print(feature)
+                x_all.append(feature)
+                y_all.append(my_calculate.calculate_y(today_close_price_day, close_price_k[i]))
 
 
 if __name__ == '__main__':
@@ -80,6 +105,8 @@ if __name__ == '__main__':
     symbolList = symbols["stock"]
     # 设置bar数据路径
     data_path = "E:/test_data/data/"
+    # 设置交易时间 前一条k线
+    trade_time = "10:25:00"
 
     print("begin:")
     # 遍历所有股票
@@ -107,7 +134,6 @@ if __name__ == '__main__':
         k_bar_data.insert(1, "time", time_list)
         # 获取每日时间
         day_time_list = k_bar_data["time"].groupby(k_bar_data["time"]).first()
-
 
         # SVM
         clf = svm.SVC(C=0.2, kernel='rbf', degree=3, gamma='auto', coef0=0.0, shrinking=True, probability=False,
