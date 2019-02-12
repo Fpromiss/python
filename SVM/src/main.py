@@ -10,7 +10,9 @@ import my_calculate
 
 
 # 计算 x
-def calculate_x():
+# @param ：begin_day ：开始日期
+# @param ：end_day ：结束日期
+def calculate_x(begin_day, end_day):
     # 获取昨日天数据
     # 获取数据,注意第一个数据的昨天数据没有，所以应该从第二个使用 每个_day是对应的昨日数据
     # (数组内存的是每一天的昨日的日数据)
@@ -27,7 +29,7 @@ def calculate_x():
     form_date = day_date_list[0]  # 昨日日期
     # 从第一天到指定天数
     print("开始训练！")
-    for now_day in day_date_list[1:day_num]:
+    for now_day in day_date_list[begin_day:end_day]:
         # 输出今日日期
         print("today:" + now_day)
 
@@ -71,7 +73,7 @@ def calculate_x():
                 x5.append(my_calculate.calculate_x5(yesterday_volume, now_volume2))
                 yes_bo_dong_lv = my_calculate.calculate_yes_bo_dong_lv(yesterday_close_price_k)  # 计算昨日波动率
                 new_bo_dong_lv = my_calculate.calculate_new_bo_dong_lv(close_price_k[0:i + 1], len(close_price_k),
-                                                                       i + 1) # 计算最新波动率
+                                                                       i + 1)  # 计算最新波动率
                 x6.append(my_calculate.calculate_x6(yes_bo_dong_lv, new_bo_dong_lv))
                 x7.append(my_calculate.calculate_x7(today_open_price_day, close_price_k[i]))
                 new_max = max(high_price_k[0:i + 1])  # 计算最新最高价
@@ -84,6 +86,94 @@ def calculate_x():
                 print(feature)
                 x_all.append(feature)
                 y_all.append(my_calculate.calculate_y(today_close_price_day, close_price_k[i]))
+                break
+    print("计算完成")
+
+
+# 清空数组 x1 - x9 和 y_all 、 x_all
+def clear_list():
+    x1.clear()
+    x2.clear()
+    x3.clear()
+    x4.clear()
+    x5.clear()
+    x6.clear()
+    x7.clear()
+    x8.clear()
+    x9.clear()
+    x_all.clear()
+    y_all.clear()
+
+
+# 模拟买
+# 每次模拟买入1000股
+# @param ： now_day ： 当前日
+def buy(now_day):
+    # 获取当前日k线数据用于模拟交易
+    k_bar = k_bar_data[k_bar_data["date"] == now_day].reset_index(drop=True)
+    close_price_k = k_bar["close"]  # 获取k线收盘价
+    time_k = k_bar["time"]  # 获取k线时间
+    flag_begin_buy = 0  # 当前是否可以开始交易
+    now_volume = 0  # 每一次交易数量
+    now_price = []  # 每一次交易价格
+    commission_ratio = 0.00018  # 手续费率
+    tax_ratio = 0.001  # 印花税率
+    commission_price = [] # 手续费
+    buy_volume = 1000  # 每次买入股数
+    ave_price = 0  # 平均买入价格
+    buy_time = 0  # 买入次数
+    profit = 0 # 当天利润
+    flag = 0  # 标记是否连续涨
+    for i in range(len(close_price_k)):
+        # 如果当预定交易时间，则可以进行交易
+        if time_k[i] == "10:30:00":
+            now_volume = buy_volume  # 买入一定股数
+            now_price.append(close_price_k[i])  # 记录买入价格
+            ave_price = ave_price + close_price_k[i]  # 计算平均价格
+            buy_time = buy_time + 1  # 买入次数+1
+            commission_price.append(buy_volume*close_price_k[i]*commission_ratio)
+            flag_begin_buy = 1  # 标记可以进行交易
+            continue
+        # 如果可以进行交易
+        # (1) 如果之后直接涨了 高于现在手中平均价格 继续买入
+        # (2) 如果涨了又跌了 但是此时价格大于平均价格 或者盈利达到百分一 止盈
+        # (3) 如果直接跌破百分之三 直接止损卖出
+        if flag_begin_buy == 1:
+            # 如果下面的k线相对于底仓价格涨了 并且 相对于前一条k线还是涨的，那么买入
+            if close_price_k[i] > now_price[0] and close_price_k[i] > close_price_k[i - 1]:
+                now_volume = now_volume + buy_volume  # 继续买入一定股数
+                now_price.append(close_price_k[i])  # 记录买入价格
+                buy_time = buy_time + 1  # 买入次数+1
+                commission_price.append(buy_volume*close_price_k[i]*commission_ratio)
+                ave_price = sum(now_price) / buy_time  # 计算平均买入价格
+            # 如果下面的k线相对于底仓价格涨了 并且 相对于前一条k线还是跌了的，那么卖出
+            if close_price_k[i] > now_price[0] and close_price_k[i] < close_price_k[i - 1]:
+                if (close_price_k[i] - ave_price) / ave_price > 0.008:
+                    profit = (close_price_k[i] - ave_price)*sum(now_volume)*(1-commission_ratio-tax_ratio)
+
+
+
+
+# 回测
+# @param ：begin_day ：开始日期
+# @param ：end_day ：结束日期
+def trade_back_test(begin_day, end_day):
+    calculate_x(begin_day, end_day)  # 获取每天结果（注意这里y_all 也得到了但是属于未来数据不能用）
+    i = 0
+    predictions = []
+    for now_day in range(begin_day, end_day):
+        # 预测买卖
+        temp_test_x = [x_all[i]]
+        # print(temp_test_x)
+        prediction = clf.predict(temp_test_x)[0]  # 进行预测
+        # print(prediction)
+        predictions.append(prediction)
+        # 如果预测涨 买进
+        if prediction == 1:
+            print("1")
+        else:  # 如果预测跌 卖出
+            print("1")
+        i = i + 1
 
 
 if __name__ == '__main__':
@@ -136,9 +226,28 @@ if __name__ == '__main__':
         day_time_list = k_bar_data["time"].groupby(k_bar_data["time"]).first()
 
         # SVM
-        clf = svm.SVC(C=0.2, kernel='rbf', degree=3, gamma='auto', coef0=0.0, shrinking=True, probability=False,
+        clf = svm.SVC(C=0.8, kernel='rbf', degree=3, gamma='auto', coef0=0.0, shrinking=True, probability=False,
                       tol=0.001, cache_size=400, verbose=False, max_iter=-1,
                       decision_function_shape='ovr', random_state=None)
         # 定义训练天数
         day_num = math.floor(len(day_date_list) * 0.8)
-        calculate_x()
+        calculate_x(1, day_num)
+        print("开始训练！")
+        clf.fit(x_all, y_all)
+        print("训练结束！")
+        # 将训练数据保存到 csv 文件
+        train_frame = pd.DataFrame(
+            {'x1': x1, 'x2': x2, 'x3': x3, 'x4': x4, 'x5': x5, 'x6': x6, 'x7': x7, 'x8': x8, 'x9': x9, 'y': y_all})
+        train_frame.to_csv("E:/test_data/result/" + symbol + "/train.csv", index=False, sep=',')
+
+        # TODO
+        # 将训练数据回代入svm 模型
+
+        # 清空之前结果
+        clear_list()
+
+        print("开始回测！")
+        trade_back_test(day_num, len(day_date_list))
+        print("回测结束！")
+        break
+    print("谢谢！")
