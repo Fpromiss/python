@@ -52,7 +52,7 @@ def calculate_x5(yes_volume, new_volume_k):
 
 
 # 计算昨日波动率
-# @param ：yes_close_price_k ：昨日5分钟k线数据
+# @param ：yes_close_price_k ：昨日5分钟k线数据收盘价
 def calculate_yes_bo_dong_lv(yes_close_price_k):
     return np.std(yes_close_price_k)
 
@@ -108,4 +108,5 @@ def calculate_y(today_close_price_day, new_close_price_k):
         return 1
     else:
         return -1
+
 

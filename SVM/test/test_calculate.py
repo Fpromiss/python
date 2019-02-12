@@ -1,4 +1,4 @@
-import src.calculate as test_calculate
+import src.my_calculate as test_calculate
 
 
 def test_calculate_x1():
@@ -38,9 +38,9 @@ def test_calculate_yes_bo_dong_lv():
 
 
 def test_calculate_new_bo_dong_lv():
-    new_close_price = [1, 2, 3]
-    result = test_calculate.calculate_new_bo_dong_lv(new_close_price, 9, 3)
-    print("test_result : " + str(result) + " except_result : 1.4....")
+    new_close_price = [8.1, 8.2, 8.3]
+    result = test_calculate.calculate_new_bo_dong_lv(new_close_price, 48, 12)
+    print("test_result : " + str(result) + " except_result : 1.6....")
 
 
 def test_calculate_x6():

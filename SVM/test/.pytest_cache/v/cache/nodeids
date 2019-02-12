@@ -1,14 +1,3 @@
 [
-  "test_calculate.py::test_calculate_x1",
-  "test_calculate.py::test_calculate_x2",
-  "test_calculate.py::test_calculate_x3",
-  "test_calculate.py::test_calculate_x4",
-  "test_calculate.py::test_calculate_new_volume",
-  "test_calculate.py::test_calculate_x5",
-  "test_calculate.py::test_calculate_yes_bo_dong_lv",
-  "test_calculate.py::test_calculate_new_bo_dong_lv",
-  "test_calculate.py::test_calculate_x6",
-  "test_calculate.py::test_calculate_x7",
-  "test_calculate.py::test_calculate_x8",
-  "test_calculate.py::test_calculate_x9"
+  "test_calculate.py::test_calculate_new_bo_dong_lv"
 ]
