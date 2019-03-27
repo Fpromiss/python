@@ -17,11 +17,14 @@ if __name__ == '__main__':
     y = []
     z = []
     # 读取GCode数据
-    gCodeData = open("F:/outGcode.txt")
+    gCodeData = open("C:/Users/Administrator/Desktop/Output.txt")
+    # gCodeData = open("F:/outGcode.txt")
     # 定义对应边界数据层下标
     indexX = 0
     indexY = 0
     indexZ = 0
+    # 定义当前层高
+    nowFloorHeight = 1
     while 1:
         # 获取每一行GCode
         lineGCodeFData = gCodeData.readline()
@@ -30,18 +33,19 @@ if __name__ == '__main__':
             break
         # 分割每一行GCode
         dataNumbers = lineGCodeFData.split()
-        # 定义当前层高
-        nowFloorHeight = 1
         # 对每一行进行判断
         for i in range(len(dataNumbers)):
             if dataNumbers[0] == "G1":
                 if len(dataNumbers) >= 4:
-                    if dataNumbers[1][0] == "X" and dataNumbers[2][0] == "Y" and dataNumbers[3][0] == "F":
-                        nowFloorHeight = nowFloorHeight + 10
+                    if dataNumbers[3][0] == 'F':
+                        nowFloorHeight += 1
+                        break
                     if dataNumbers[1][0] == "X" and dataNumbers[2][0] == "Y" and dataNumbers[3][0] == "E":
                         x.insert(indexX, float(dataNumbers[1][1:]))
                         y.insert(indexY, float(dataNumbers[2][1:]))
                         z.insert(indexZ, float(nowFloorHeight))
+        if nowFloorHeight == 10:
+            print(dataNumbers)
         indexX += 1
         indexY += 1
         indexZ += 1
