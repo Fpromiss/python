@@ -17,8 +17,7 @@ if __name__ == '__main__':
     y = []
     z = []
     # 读取GCode数据
-    gCodeData = open("C:/Users/Administrator/Desktop/Output.txt")
-    # gCodeData = open("F:/outGcode.txt")
+    gCodeData = open("F:/outGcode.txt")
     # 定义对应边界数据层下标
     indexX = 0
     indexY = 0
