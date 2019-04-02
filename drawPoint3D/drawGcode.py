@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+ï»¿import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 
@@ -12,27 +12,27 @@ def draw_out_line(list_x, list_y, list_z):
 
 
 if __name__ == '__main__':
-    # ¶¨Òå´æ·Åx±ß½çÊý¾Ý y±ß½çÊý¾Ý z±ß½çÊý¾Ý
+    # å®šä¹‰å­˜æ”¾xè¾¹ç•Œæ•°æ® yè¾¹ç•Œæ•°æ® zè¾¹ç•Œæ•°æ®
     x = []
     y = []
     z = []
-    # ¶ÁÈ¡GCodeÊý¾Ý
+    # è¯»å–GCodeæ•°æ®
     gCodeData = open("F:/outGcode.txt")
-    # ¶¨Òå¶ÔÓ¦±ß½çÊý¾Ý²ãÏÂ±ê
+    # å®šä¹‰å¯¹åº”è¾¹ç•Œæ•°æ®å±‚ä¸‹æ ‡
     indexX = 0
     indexY = 0
     indexZ = 0
-    # ¶¨Òåµ±Ç°²ã¸ß
+    # å®šä¹‰å½“å‰å±‚é«˜
     nowFloorHeight = 1
     while 1:
-        # »ñÈ¡Ã¿Ò»ÐÐGCode
+        # èŽ·å–æ¯ä¸€è¡ŒGCode
         lineGCodeFData = gCodeData.readline()
-        # Èç¹û¶ÁÈ¡Íê±Ï Ìø³öÑ­»·
+        # å¦‚æžœè¯»å–å®Œæ¯• è·³å‡ºå¾ªçŽ¯
         if not lineGCodeFData:
             break
-        # ·Ö¸îÃ¿Ò»ÐÐGCode
+        # åˆ†å‰²æ¯ä¸€è¡ŒGCode
         dataNumbers = lineGCodeFData.split()
-        # ¶ÔÃ¿Ò»ÐÐ½øÐÐÅÐ¶Ï
+        # å¯¹æ¯ä¸€è¡Œè¿›è¡Œåˆ¤æ–­
         for i in range(len(dataNumbers)):
             if dataNumbers[0] == "G1":
                 if len(dataNumbers) >= 4:
